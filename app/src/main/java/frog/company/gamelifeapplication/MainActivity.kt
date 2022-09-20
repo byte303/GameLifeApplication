@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private var timer: Timer? = null
     private var tTask: TimerTask? = null
-    private var interval: Long = 1000
+    private var interval: Long = 100
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-            timer?.schedule(tTask, 1000, interval)
+            timer?.schedule(tTask, 100, interval)
         }
     }
 
@@ -146,6 +146,7 @@ class MainActivity : AppCompatActivity() {
             temp[i] = 0.toByte()
         }
         binding.list.adapter?.notifyDataSetChanged()
+        binding.imgStartPause.setImageResource(R.drawable.ic_baseline_pause_24)
     }
 
     private fun init(){
